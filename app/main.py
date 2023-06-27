@@ -5,16 +5,18 @@ import charts
 def run():
     
     data = read_csv.read_csv('./app/data.csv')
-    country = input('Ingrese el pais a buscar: ')
-    result = utils.population_by_country(data, country.title())
+    # country = input('Ingrese el pais a buscar: ')
+    # result = utils.population_by_country(data, country.title())
 
+    '''
     if len(result) > 0:
         country = result[0]
         labels, values = utils.get_population(country)
         charts.generate_bar_chart(labels, values)
-        
+    '''
 
-    print(result)
+    labels, values = utils.get_world_population(data)
+    charts.generate_pie_chart(labels, values)
 
 
 # Esta instruccion le dice a python que si este archivo es ejecutado desde la terminal
